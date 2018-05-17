@@ -1,12 +1,13 @@
-#install.packages(c("twitteR","RColorBrewer","plyr","ggplot2","devtools","httr"))
+install.packages(c("twitteR","RColorBrewer","plyr","ggplot2","devtools","httr"))
 
-#install.packages("devtools")
+install.packages("devtools")
+
+install.packages("rjson")
 library("devtools")
-#install.packages("rjson")
 #install_url("https://cran.r-project.org/src/contrib/Archive/Rstem/Rstem_0.4-1.tar.gz")
-#install_url("https://cran.r-project.org/src/contrib/Archive/slam/slam_0.1-37.tar.gz")
-#install_url("https://cran.r-project.org/src/contrib/Archive/sentiment/sentiment_0.2.tar.gz")
-#install_github("twitteR", username="geoffjentry")
+install_url("https://cran.r-project.org/src/contrib/Archive/slam/slam_0.1-37.tar.gz")
+install_url("https://cran.r-project.org/src/contrib/Archive/sentiment/sentiment_0.2.tar.gz")
+install_github("twitteR", username="geoffjentry")
 
 library(slam)
 library(sentiment)
@@ -24,7 +25,7 @@ setup_twitter_oauth(api_key,
                     access_token,
                     access_token_secret)
 
-tweets <- searchTwitter("duque", n = 1500, lang = "es")
+tweets <- searchTwitter("ColombiaTaurina", n = 1500, lang = "es")
 
 text <- sapply(tweets,function(x) x$getText())
 
